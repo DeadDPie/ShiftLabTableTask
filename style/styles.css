@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  background: url("img.jpg") no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+  margin-top: 25px;
+  margin-bottom: 20px;
+}
+#search-form {
+  width: auto;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+}
+#search-input {
+  width: 280px;
+  height: 30px;
+  border: 2px solid #0f1814;
+  border-radius: 15px;
+  padding: 2px 3px 2px 3px;
+  margin-right: 2vw;
+
+  background: transparent;
+  border: none;
+  outline: none;
+  border: 2px solid rgba(250, 225, 246, 0.556);
+  border-radius: 40px;
+  font-size: 16px;
+  color: white;
+  padding: 20px 40px 20px 20px;
+  margin: 2vw 5vs;
+}
+::placeholder {
+  color: white;
+  opacity: 1; /* Firefox */
+}
+#search-button {
+  width: 75px;
+  height: 35px;
+  padding: 2px 3px 2px 3px;
+  border-radius: 15px;
+
+  /*width: 100%;*/
+
+  background: #fff;
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #333;
+  font-weight: 600;
+}
+#myTable {
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(20px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  color: #fff;
+  border-radius: 10px;
+
+  /* padding: 30px 40px;display: block;*/
+
+  padding: 10px;
+  margin: 0 auto;
+  max-width: 1600px;
+  margin: auto 15px;
+}
+.column {
+  display: grid;
+  grid-template-columns: 5% 30% 40% 10% 15%;
+}
+.cell {
+  border: 2px solid rgba(250, 225, 246, 0.556);
+  border-radius: 10px;
+  padding: 10px;
+  text-align: center;
+  align-items: center;
+  padding: 3px;
+  margin: 4px;
+}
+
+.header {
+  font-weight: 900;
+  text-align: center;
+  align-items: center;
+}
+.cell:hover {
+  background-color: rgb(117, 25, 151);
+  transition: background-color 0.3s ease-in-out;
+  cursor: pointer;
+}
+#match-count {
+  width: auto;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  justify-content: center;
+  color: #fff;
+  font-size: 1.2rem;
+}
+.match {
+  background-color: #ec7070;
+  color: white;
+}
+
+@media only screen and (min-width: 421px) and (max-width: 650px) {
+  .header {
+    font-weight: 600;
+    font-size: 0.9rem;
+  }
+  .cell {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (max-width: 421px) {
+  .header {
+    display: none;
+  }
+  .column {
+    grid-template-columns: 1fr;
+  }
+  #search-input {
+    width: 70%;
+    margin-bottom: 3vh;
+  }
+  #search-form {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+  .cell::before {
+    content: attr(data-label);
+    font-weight: 900;
+
+    display: block;
+  }
+}
